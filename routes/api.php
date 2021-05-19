@@ -28,6 +28,7 @@ Route::prefix('/drank')->group(function() {
 
 Route::get('/consumpties', [DrankUserController::class, 'index']);
 Route::prefix('/consumptie')->group(function() {
+    Route::get('/{id}', [DrankUserController::class, 'getSingle']);
     Route::post('/store', [DrankUserController::class, 'store']);
     Route::put('/{id}/{amount}', [DrankUserController::class, 'update']);
     Route::delete('/{id}', [DrankUserController::class, 'destroy']);

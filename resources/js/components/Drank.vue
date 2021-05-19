@@ -2,7 +2,8 @@
   <div class="drank-container container mx-auto w-100 rounded-lg p-4 text-white flex justify-between content-around items-center" :style="{ 'background-color': backgroundColor }">
     <div class="drank-info flex flex-col content-around">
       <h3 class="text-xl font-medium text-left">{{ drank }} - €{{ price }}</h3>
-      <p class="text-left text-md font-normal">Streepjes: {{ current }}</p>
+      <p v-if="updated" class="text-left text-md font-normal">Streepjes: {{ current }}</p>
+      <p v-else="updated" class="text-left text-md font-normal">Streepjes: {{ newCurrent[0].amount }}</p>
     </div>
     <div class="drank-streepjes grid grid-cols-2 grid-rows-2 gap-4">
       <button @click="add(1)" class="font-bold text-md rounded-lg text-black outline-none rounded-sm p-3 bg-white flex-1">+1</button>
@@ -19,7 +20,9 @@ export default {
   data() {
     return {
         number: 1,
-        amount: 1
+        amount: 1,
+        newCurrent: '',
+        updated: true
     }
   },
   props: {
@@ -38,11 +41,21 @@ export default {
   methods: {
     add(number) {
       this.updateAmount(number);
+      this.getConsumpties();
     },
       updateAmount(number) {
           axios.put(`/api/consumptie/${this.drankId}/${number}`)
               .then(response => {
-                  console.log('Consumptie aangepast!');
+              })
+              .catch(error => {
+                  console.log(error);
+              })
+      },
+      getConsumpties() {
+          axios.get(`/api/consumptie/${this.drankId}`)
+              .then(response => {
+                  this.newCurrent = response.data;
+                  this.updated = false
               })
               .catch(error => {
                   console.log(error);

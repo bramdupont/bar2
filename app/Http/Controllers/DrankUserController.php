@@ -15,10 +15,17 @@ class DrankUserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $user = auth()->user();
         $user_id = auth()->id();
         return  DB::table('drank_user')
             ->where('user_id', '=', $user_id)
+            ->get();
+    }
+
+    public function getSingle($id) {
+        $user_id = auth()->id();
+        return  DB::table('drank_user')
+            ->where('user_id', '=', $user_id)
+            ->where('drank_id', '=', $id)
             ->get();
     }
 
