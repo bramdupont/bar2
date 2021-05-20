@@ -3,7 +3,7 @@
       <div>
         <router-view></router-view>
         <div class="menu fixed bottom-0 left-0 right-0">
-          <div class="flex flex-row justify-between items-end py-2">
+          <div class="menu flex flex-row justify-between items-end py-2">
             <router-link class="flex-1" to="/bestellen"><font-awesome-icon icon="home"/></router-link>
             <router-link class="flex-1" to="/saldo"><font-awesome-icon icon="credit-card"/></router-link>
             <router-link class="flex-1" to="/account"><font-awesome-icon icon="user"/></router-link>
