@@ -35,6 +35,7 @@ Route::prefix('/consumptie')->group(function() {
 });
 
 Route::get('/gebruikers', [UserController::class, 'index']);
+Route::get('/gebruiker', [UserController::class, 'getSingle']);
 Route::prefix('/gebruiker')->group(function() {
     Route::post('/store', [UserController::class, 'store']);
     Route::put('/{id}', [UserController::class, 'update']);

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
-<div style="height: 100vh; width: 100%; background-color: #F3F3EE;" id="app" class="md:hidden">
+<div style="min-height: 100vh; width: 100%; background-color: #F3F3EE;" id="app" class="md:hidden">
     <App></App>
 </div>
 <div class="hidden md:block">

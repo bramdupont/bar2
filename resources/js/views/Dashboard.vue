@@ -44,7 +44,7 @@ export default {
         }
     },
     created() {
-      this.getDranken(),
+      this.getDranken()
       this.getConsumpties();
     },
     computed: {

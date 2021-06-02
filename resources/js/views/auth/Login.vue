@@ -3,7 +3,7 @@
         <div class="thor">
             <img class="w-100 h-3/6" :src="image" alt="">
         </div>
-        <div class="mt-32 text-left">
+        <div class="mt-12 text-left">
             <form action="#" @submit.prevent="handleLogin">
                 <h1 class="mb-4 inline-block border-b-2 border-purple text-2xl font-bold text-left">Inloggen</h1>
                 <div class="form-row">
@@ -17,7 +17,7 @@
                 </div>
             </form>
             <router-link to="/registreren" class="my-6 text-center text-blue block">Ik heb nog geen account</router-link>
-            <p class="absolute bottom-4 w-11/12 text-gray-500 text-sm font-light block text-center">© Dupont Webdesign</p>
+            <a href="https://dupontwebdesign.com" target="_blank" class="mt-12 w-11/12 text-gray-500 text-sm font-light block text-center">© Dupont Webdesign</a>
         </div>
     </div>
 </template>

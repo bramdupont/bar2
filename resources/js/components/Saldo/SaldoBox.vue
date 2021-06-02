@@ -2,11 +2,11 @@
   <div class="saldo-container text-white container mx-auto w-100 rounded-lg p-4 text-black flex flex-col">
     <div class="flex justify-between py-2">
     <p class="text-left text-md font-normal justify-self-start">Saldo</p>
-      <p class="text-left text-md font-normal justify-self-end">€{{ saldoNow | formatNumber }}</p>
+      <p class="text-left text-md font-normal justify-self-end">€{{ gebruiker[0].saldo }}</p>
     </div>
     <div class="flex justify-between py-2">
       <p class="text-left text-md font-normal justify-self-start">Totaal geconsumeerd</p>
-      <p class="text-left text-md font-normal justify-self-end">€{{ totaal | formatNumber}}</p>
+      <p class="text-left text-md font-normal justify-self-end">€{{ gebruiker[0].totaal }}</p>
     </div>
   </div>
 </template>
@@ -37,14 +37,25 @@ Vue.filter("formatNumber", function (value){
 });
 export default {
   name: 'saldo-box',
-  props: {
-      saldoNow: {
-          type: Number
-      },
-      totaal: {
-          type: Number
+    data() {
+      return {
+          gebruiker: []
       }
-  }
+    },
+    methods: {
+        getSaldo() {
+            axios.get('/api/gebruiker')
+                .then(response => {
+                    this.gebruiker = response.data
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
+    },
+    created() {
+        this.getSaldo()
+    }
 }
 </script>
 <style scoped>

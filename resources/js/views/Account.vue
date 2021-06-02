@@ -1,10 +1,11 @@
 <template>
   <div>
-    <Header title="Hey Bram"></Header>
+    <Header title="WHUT! Zoveel!?"></Header>
       <saldo-box :saldo-now="gebruikers[0].saldo" :totaal="gebruikers[0].totaal"></saldo-box>
     <account-links></account-links>
-    <recent-transactions></recent-transactions>
-    <a href="#" class="mt-8 bg-indigo-600 p-2 text-white rounded-md w-1/2 mx-auto block">Bekijk meer</a>
+<!--    <recent-transactions></recent-transactions>-->
+<!--    <a href="#" class="mt-8 bg-indigo-600 p-2 text-white rounded-md w-1/2 mx-lauto block">Bekijk meer</a>-->
+      <a href="https://dupontwebdesign.com" target="_blank" class="absolute bottom-4 w-11/12 text-gray-500 text-sm font-light block text-center">© Dupont Webdesign</a>
   </div>
 </template>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -17,6 +18,12 @@ class UserController extends Controller
         return User::orderBy('name', 'DESC')->get();
     }
 
+    public function getSingle() {
+        $user_id = auth()->id();
+        return  DB::table('users')
+            ->where('id', '=', $user_id)
+            ->get();
+    }
     /**
      * Show the form for creating a new resource.
      *
