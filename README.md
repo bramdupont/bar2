@@ -1,6 +1,7 @@
 <h1>Drank app - <em>in progress</em></h1>
 <h2>Web app</h2>
 <h3>Playthrough of the app: https://we.tl/t-ikCGBzQ4Vk</h3>
+<h3>Design of the app: https://www.figma.com/file/B0Lt86Op6gKi5uf4WckxZb/Drank-app?node-id=0%3A1</h3>
 
 <p>Jeugdbewegingen maken regelmatig gebruik van streepjessystemen om het verbruik van de leiding bij te houden.</p>
 
